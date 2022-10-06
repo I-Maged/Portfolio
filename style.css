@@ -78,7 +78,7 @@ nav h3 {
 }
 .main-header-container {
   padding: 0 20px;
-  min-height: 40vh;
+  height: 300px;
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
@@ -179,7 +179,7 @@ ul li {
     position: absolute;
     top: 72px;
     right: 0;
-    width: 35%;
+    width: 180px;
     text-align: left;
   }
   .nav-links.responsive {
@@ -206,6 +206,12 @@ ul li {
 @media (max-width: 600px) {
   .main-header-container {
     grid-template-columns: 1fr;
+  }
+  .main-header h3 {
+    font-size: 24px;
+  }
+  .main-header h1 {
+    font-size: 36px;
   }
   .main-header {
     grid-column: 1;
