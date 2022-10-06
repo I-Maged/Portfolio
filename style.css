@@ -197,7 +197,7 @@ h3 {
     transform: translateY(-8px) rotate(-45deg);
   }
   .nav-menu {
-    position: absolute;
+    position: fixed;
     right: -100%;
     top: 78px;
     gap: 0;
