@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <meta charset="utf-8" />
@@ -19,18 +18,26 @@
   <body>
     <header>
       <nav>
-        <h3>maged ibrahim</h3>
-        <div class="nav-bar">
-          <div>
-            <a class="menu-icon" onclick="onMenuClick()">
-              <i class="fa-solid fa-bars"></i>
-            </a>
-          </div>
-          <div class="nav-links">
-            <a href="#" class="nav-link">about</a>
-            <a href="#" class="nav-link">projects</a>
+        <h3>
+          <a target="_blank" href="https://github.com/I-Maged" class="nav-title"
+            >maged ibrahim</a
+          >
+        </h3>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#about" class="nav-link">about</a>
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link">projects</a>
+          </li>
+          <li class="nav-item">
             <a href="#" class="nav-link">contact</a>
-          </div>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
       </nav>
       <div class="main-header-container">
@@ -49,7 +56,7 @@
       </div>
     </header>
     <main>
-      <div class="divider"><h2>About</h2></div>
+      <div id="about" class="divider"><h2>About</h2></div>
       <div class="grid-display">
         <div class="section">
           <p class="about-text">
@@ -62,7 +69,7 @@
             achieve lasting impacts on user experience.
           </p>
           <h3>Technologies I use</h3>
-          <ul>
+          <ul class="tech-list">
             <li>html</li>
             <li>css</li>
             <li>javascript</li>
@@ -71,6 +78,12 @@
             <li>git</li>
             <li>github</li>
           </ul>
+        </div>
+      </div>
+      <div class="grid-display">
+        <div class="section">
+          <div id="projects" class="divider"><h2>Projects</h2></div>
+          <div></div>
         </div>
       </div>
     </main>

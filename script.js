@@ -1,9 +1,17 @@
 // Responsive Menu
-function onMenuClick() {
-  let navbar = document.querySelector('.nav-links');
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
 
-  navbar.classList.toggle('responsive');
-}
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+});
+document.querySelectorAll('.nav-link').forEach((link) =>
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+  })
+);
 
 // H1 Typewriter Effect
 class TypeWriter {
