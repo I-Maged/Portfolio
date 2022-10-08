@@ -189,23 +189,27 @@
             </a>
           </div>
           <h3>&#8212; OR &#8212;</h3>
-          <form id="contact-form" action="">
+          <form id="contact-form">
             <div class="input-field">
               <input type="text" name="name" id="name" placeholder=" " />
               <label for="name">Name</label>
+              <p class="name-invalid">Please enter a valid Email address</p>
             </div>
             <div class="input-field">
-              <input type="text" name="email" id="email" placeholder=" " />
+              <input type="email" name="email" id="email" placeholder=" " />
               <label for="email">Email</label>
+              <p class="email-invalid">Please enter a valid Email address</p>
             </div>
             <div class="input-field">
               <textarea
+                id="textarea"
                 name="textarea"
                 id="textarea"
                 rows="10"
                 placeholder=" "
               ></textarea>
               <label for="textarea">Write your message</label>
+              <p class="text-invalid">Please enter a valid Email address</p>
             </div>
             <button>
               Send <img src="./images/send-outline.png" alt="" srcset="" />

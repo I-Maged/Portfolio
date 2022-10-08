@@ -6,6 +6,7 @@
   --secondary-font: #ffaf26;
   --border: #000000;
   --shadow: rgba(141, 141, 141, 0.62);
+  --error: #ff0000;
 }
 *,
 *::before,
@@ -276,7 +277,7 @@ form {
   justify-content: center;
   align-items: center;
   padding-bottom: 60px;
-  gap: 30px;
+  gap: 15px;
 }
 .input-field {
   display: flex;
@@ -335,6 +336,25 @@ button:active {
 .contact-icon:hover,
 button:hover {
   scale: 1.1;
+}
+#name.error,
+#email.error,
+#textarea.error {
+  outline: 2px solid var(--error);
+}
+.name-invalid,
+.email-invalid,
+.text-invalid {
+  font-size: 18px;
+  margin-left: 10px;
+  margin-top: 3px;
+  color: var(--error);
+  opacity: 0;
+}
+.name-invalid.show,
+.email-invalid.show,
+.text-invalid.show {
+  opacity: 1;
 }
 @media (max-width: 900px) {
   .hamburger {

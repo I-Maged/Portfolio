@@ -64,3 +64,53 @@ window.onload = function () {
   let period = textElement.getAttribute('data-period');
   new TypeWriter(textElement, words, period);
 };
+
+//Contact Form
+//Form Validation
+document.querySelector('button').addEventListener('click', (e) => {
+  //Prevent auto submit
+  e.preventDefault();
+  //declaring error messages
+  const nameError = document.querySelector('.name-invalid');
+  const emailError = document.querySelector('.email-invalid');
+  const messageError = document.querySelector('.text-invalid');
+  //declaring input fields
+  const nameInput = document.querySelector('#name');
+  const emailInput = document.querySelector('#email');
+  const messageInput = document.querySelector('#textarea');
+  //email validation expression
+  const emailPattern =
+    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+  //name validation
+  if (!/[a-zA-Z]/.test(nameInput.value) || nameInput.value.length < 2) {
+    nameInput.classList.add('error');
+    nameError.classList.add('show');
+    return;
+  } else {
+    nameInput.classList.remove('error');
+    nameError.classList.remove('show');
+  }
+
+  //email validation
+  if (!emailInput.value.match(emailPattern)) {
+    emailInput.classList.add('error');
+    emailError.classList.add('show');
+    return;
+  } else {
+    emailInput.classList.remove('error');
+    emailError.classList.remove('show');
+  }
+
+  //message validation
+  if (!/[a-zA-Z]/.test(messageInput.value) || messageInput.value.length < 10) {
+    messageInput.classList.add('error');
+    messageError.classList.add('show');
+    return;
+  } else {
+    messageInput.classList.remove('error');
+    messageError.classList.remove('show');
+  }
+
+  console.log('message sent successfully');
+});
