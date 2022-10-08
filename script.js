@@ -1,13 +1,15 @@
 // Responsive Menu
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-hamburger.addEventListener('click', () => {
+document.querySelector('.hamburger').addEventListener('click', () => {
+  let hamburger = document.querySelector('.hamburger');
+  let navMenu = document.querySelector('.nav-menu');
   hamburger.classList.toggle('active');
   navMenu.classList.toggle('active');
 });
+
 document.querySelectorAll('.nav-link').forEach((link) =>
   link.addEventListener('click', () => {
+    let hamburger = document.querySelector('.hamburger');
+    let navMenu = document.querySelector('.nav-menu');
     hamburger.classList.remove('active');
     navMenu.classList.remove('active');
   })
