@@ -128,7 +128,6 @@ function sendMail(name, email, message) {
     full_name: name,
     email_id: email,
     text_message: message,
-    name: 'Portfolio',
   };
 
   emailjs
