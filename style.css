@@ -277,7 +277,7 @@ form {
   justify-content: center;
   align-items: center;
   padding-bottom: 60px;
-  gap: 15px;
+  gap: 10px;
 }
 .input-field {
   display: flex;
@@ -349,12 +349,22 @@ button:hover {
   margin-left: 10px;
   margin-top: 3px;
   color: var(--error);
-  opacity: 0;
+  display: none;
 }
 .name-invalid.show,
 .email-invalid.show,
 .text-invalid.show {
-  opacity: 1;
+  display: block;
+}
+.sent {
+  font-size: 18px;
+  margin-left: 10px;
+  margin: 5px 0 5px 10px;
+  color: rgb(6, 207, 6);
+  display: none;
+}
+.sent.show {
+  display: block;
 }
 @media (max-width: 900px) {
   .hamburger {

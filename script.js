@@ -72,6 +72,8 @@ window.onload = function () {
 document.querySelector('button').addEventListener('click', (e) => {
   //Prevent auto submit
   e.preventDefault();
+  //Remove success message
+  document.querySelector('.sent').classList.remove('show');
   //declaring error messages
   const nameError = document.querySelector('.name-invalid');
   const emailError = document.querySelector('.email-invalid');
@@ -114,5 +116,28 @@ document.querySelector('button').addEventListener('click', (e) => {
     messageError.classList.remove('show');
   }
 
-  console.log('message sent successfully');
+  sendMail(nameInput.value, emailInput.value, messageInput.value);
+  nameInput.value = '';
+  emailInput.value = '';
+  messageInput.value = '';
 });
+
+//sending email via EmailJS
+function sendMail(name, email, message) {
+  const params = {
+    full_name: name,
+    email_id: email,
+    text_message: message,
+  };
+
+  emailjs
+    .send('service_43you4m', 'template_ayud15n', params, 'Ox0Zr69mEZSVGb1ba')
+    .then(
+      (result) => {
+        document.querySelector('.sent').classList.add('show');
+      },
+      (error) => {
+        alert('FAILED SENDING MESSAGE');
+      }
+    );
+}
