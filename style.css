@@ -32,6 +32,7 @@ a:active {
   background-color: transparent;
 }
 nav {
+  height: 78px;
   font-style: italic;
   display: flex;
   align-items: center;
@@ -383,6 +384,7 @@ button:hover {
     position: fixed;
     right: -100%;
     top: 78px;
+    /* top */
     gap: 0;
     flex-direction: column;
     align-items: flex-start;
