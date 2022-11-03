@@ -1,20 +1,3 @@
-// Responsive Menu
-document.querySelector('.hamburger').addEventListener('click', () => {
-  let hamburger = document.querySelector('.hamburger');
-  let navMenu = document.querySelector('.nav-menu');
-  hamburger.classList.toggle('active');
-  navMenu.classList.toggle('active');
-});
-
-document.querySelectorAll('.nav-link').forEach((link) =>
-  link.addEventListener('click', () => {
-    let hamburger = document.querySelector('.hamburger');
-    let navMenu = document.querySelector('.nav-menu');
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-  })
-);
-
 // H1 Typewriter Effect
 class TypeWriter {
   constructor(textElement, words, period) {
@@ -59,7 +42,7 @@ class TypeWriter {
   };
 }
 
-// Starting Effect On Window Load
+// Starting Typewriter Effect On Window Load
 window.onload = function () {
   let textElement = document.querySelector('.typewrite');
   let words = JSON.parse(textElement.getAttribute('data-words'));
@@ -73,7 +56,7 @@ document.querySelector('button').addEventListener('click', (e) => {
   //Prevent auto submit
   e.preventDefault();
   //Remove success message
-  document.querySelector('.sent').classList.remove('show');
+  document.querySelector('.sent').style.display = 'none';
   //declaring error messages
   const nameError = document.querySelector('.name-invalid');
   const emailError = document.querySelector('.email-invalid');
@@ -89,31 +72,31 @@ document.querySelector('button').addEventListener('click', (e) => {
   //name validation
   if (!/[a-zA-Z]/.test(nameInput.value) || nameInput.value.length < 2) {
     nameInput.classList.add('error');
-    nameError.classList.add('show');
+    nameError.style.display = 'block';
     return;
   } else {
     nameInput.classList.remove('error');
-    nameError.classList.remove('show');
+    nameError.style.display = 'none';
   }
 
   //email validation
   if (!emailInput.value.match(emailPattern)) {
     emailInput.classList.add('error');
-    emailError.classList.add('show');
+    emailError.style.display = 'block';
     return;
   } else {
     emailInput.classList.remove('error');
-    emailError.classList.remove('show');
+    emailError.style.display = 'none';
   }
 
   //message validation
   if (!/[a-zA-Z]/.test(messageInput.value) || messageInput.value.length < 10) {
     messageInput.classList.add('error');
-    messageError.classList.add('show');
+    messageError.style.display = 'block';
     return;
   } else {
     messageInput.classList.remove('error');
-    messageError.classList.remove('show');
+    messageError.style.display = 'none';
   }
 
   sendMail(nameInput.value, emailInput.value, messageInput.value);
@@ -134,7 +117,7 @@ function sendMail(name, email, message) {
     .send('service_43you4m', 'template_ayud15n', params, 'Ox0Zr69mEZSVGb1ba')
     .then(
       (result) => {
-        document.querySelector('.sent').classList.add('show');
+        document.querySelector('.sent').style.display = 'block';
       },
       (error) => {
         alert('FAILED SENDING MESSAGE');
