@@ -151,6 +151,9 @@ main {
   font-size: 20px;
   text-align: justify;
 }
+.about-text :first-child {
+  margin-bottom: 15px;
+}
 .section h3 {
   color: var(--secondary-font);
   font-style: italic;

@@ -1,6 +1,6 @@
 # Portfolio
 
-##Hello,
+**Hello,**
 
 Thank you for visiting my personal portfolio
 
